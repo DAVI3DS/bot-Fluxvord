@@ -1,0 +1,29 @@
+{
+  "name": "voice-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "bridge-server",
+    "discord-bot",
+    "fluxy-bot"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "start:bridge": "npm run start -w bridge-server",
+    "start:discord": "npm run start -w discord-bot",
+    "start:fluxy": "npm run start -w fluxy-bot",
+    "dev:bridge": "npm run dev -w bridge-server",
+    "dev:discord": "npm run dev -w discord-bot",
+    "dev:fluxy": "npm run dev -w fluxy-bot",
+    "start:all": "concurrently -n bridge,discord,fluxy -c cyan,green,magenta \"npm run start:bridge\" \"npm run start:discord\" \"npm run start:fluxy\"",
+    "dev:all": "concurrently -n bridge,discord,fluxy -c cyan,green,magenta \"npm run dev:bridge\" \"npm run dev:discord\" \"npm run dev:fluxy\""
+  },
+  "allowScripts": {
+    "@discordjs/opus@0.9.0": true,
+    "esbuild@0.28.1": true
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
