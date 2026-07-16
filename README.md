@@ -1,4 +1,4 @@
-# Voice Bridge — Discord ↔ Fluxy
+# Voice Bridge — Discord ↔ Fluxer
 
 Ponte de voz bidirecional em tempo real entre Discord e Fluxer.
 
